@@ -1,35 +1,10 @@
-Notice
+About
 ======
-As of late February 2015, the Fighting Walrus team have moved development of iDroneCtrl to a private fork.
+gcs2 is a fork of the iDroneCtrl project originally started by [Claudio Natoli](https://github.com/cnatoli) and continued by [Andy Brown](https://github.com/andymoe) and others at a company called [Fighting Walrus](http://www.fightingwalrus.com/).
 
-While this repo will be otherwise dormant, users may wish to log issues or feature requests here, and regular [App Store](https://itunes.apple.com/us/app/idronectrl/id948077202) updates will continue.
+This fork started by [Andy Brown](https://github.com/andymoe) is from the last publicly available source of the iDroneCtrl software from February 2015.
 
-For additional news, or to subscribe for updates, please see the [Fighting Walrus blog](http://www.fightingwalrus.com/blogs/news).
-
-![alt tag](https://raw.github.com/fightingwalrus/iGCS/master/iGCS/Icons/Icon-50.png) iDroneCtrl
-====
-
-iDroneCtrl (formally iGCS) is a UAV ground control station for iPad and iPhone. 
-
-It is intended for use with UAVs and autopilots supporting the [MAVLink](http://qgroundcontrol.org/mavlink/start) protocol, such as  [ArduPilot Mega](http://dev.ardupilot.com) and the Pixhawk in the 3DR IRIS and IRIS+. AR.Drone 2.0 (with Flight Recorder) has also been tested.
-
-iDroneCtrl requires the "Made for iPhone/iPad" iDroneLink available for sale at www.fightingwalrus.com
-
-You can download iDroneCtrl from the Apple App Store here:
-
-[iDroneCtrl - Fighting Walrus](https://itunes.apple.com/us/app/idronectrl/id948077202?mt=8&uo=4)
-
-For further details, see:
-
-- http://www.fightingwalrus.com
-- http://diydrones.com/profiles/blogs/ipad-ground-control-station
-- http://www.youtube.com/watch?v=S1YOwLGsUrs
-
-Screenshots
-========
-![Main View](https://raw.github.com/fightingwalrus/iGCS/master/screenshots/gcsview.png "Main View")
-![Main View with sidebar](https://raw.github.com/fightingwalrus/iGCS/master/screenshots/gcsview-sidebar.png "Main View with sidebar")
-![Mission Editor](https://raw.github.com/fightingwalrus/iGCS/master/screenshots/mission-edit.png "Mission Editor")
+The current goals are to modernize the code base, backfill tests and add support for additional comm devices besides the [iDroneLink](http://fightingwalrus.com/products/idronelink). Finally, I'd like to come up with a catchier name than gcs2 and some larger product goals based on feedback from the community.
 
 Building
 ========
@@ -51,7 +26,7 @@ Fighting Walrus maintains a [fork](https://github.com/fightingwalrus/mavlink) of
 3. Navigate to the pymavlink/generator directory
 4. Run the gen_all.sh script like this: `./gen_all.sh`
 5. Navigate to pymavlink/generator/C/include_v1.0 (we support MAVLink 1.0 but not v.9)
-6. Create a branch of the iGCS project 
+6. Create a branch of the iGCS project
 7. Copy the follow folders and files into the iGCS folder named `mavlink_include`
 
 Folders and files to copy:
@@ -71,8 +46,13 @@ Folders and files to copy:
 
 Commit and push your changes and open a pull request for review and further HIL testing. In the pull request please note the commit or tag from the MAVLink repository that was used to generate the new MAVLink header files.
 
-License
-=======
+License (gcs2)
+==============
+All new gcs2 source code is copyright its respective Author and is distributed under The MIT License (MIT)
+
+
+License (iDroneCtrl)
+====================
 All iDroneCtrl (formally iGCS) code is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
 For other code and assets, see ATTRIBUTION.md.
 
