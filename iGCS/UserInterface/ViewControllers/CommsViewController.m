@@ -3,8 +3,6 @@
 //  iGCS
 //
 //  Created by Claudio Natoli on 5/02/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
 
 #import "CommsViewController.h"
 #import "GaugeViewCommon.h"
@@ -41,10 +39,11 @@
     
     // Setup initial plot ranges
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.dataRateGraph.defaultPlotSpace;
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0)
-                                                    length:CPTDecimalFromFloat([_dataRateRecorder maxDurationInSeconds])];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0)
-                                                    length:CPTDecimalFromFloat(1.0)];
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:@0.0
+                                                    length:@(_dataRateRecorder.maxDurationInSeconds)];
+
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:@0.0
+                                                    length:@1.0];
     
     // Setup axes options
     CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
@@ -69,7 +68,7 @@
     lineStyle.lineWidth = 2.0f;
     xAxis.axisLineStyle         = lineStyle;
     xAxis.majorTickLineStyle    = lineStyle;
-    xAxis.majorIntervalLength   = CPTDecimalFromDouble(10.0);
+    xAxis.majorIntervalLength   = @10.0;
     xAxis.majorTickLength       = 5.0f;
     lineStyle.lineWidth = 1.0f;
     xAxis.minorTickLineStyle    = lineStyle;
@@ -84,7 +83,7 @@
     lineStyle.lineWidth = 2.0f;
     yAxis.axisLineStyle         = lineStyle;
     yAxis.majorTickLineStyle    = lineStyle;
-    yAxis.majorIntervalLength   = CPTDecimalFromDouble(1024.0f);
+    yAxis.majorIntervalLength   = @1024.0f;
     yAxis.majorTickLength       = 5.0f;
     lineStyle.lineWidth = 1.0f;
     yAxis.minorTickLineStyle    = lineStyle;
@@ -215,8 +214,8 @@
 -(void) onDataRateUpdate:(NSNotification*)notification {
     // Reset the y-axis range and reload the graph data
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.dataRateGraph.defaultPlotSpace;
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-0.01)
-                                                    length:CPTDecimalFromFloat(MAX([self.dataRateRecorder maxValue]*1.1, 1))];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:@(-0.01)
+                                                    length:@(MAX([self.dataRateRecorder maxValue]*1.1, 1))];
     [self.dataRateGraph reloadData];
 }
 

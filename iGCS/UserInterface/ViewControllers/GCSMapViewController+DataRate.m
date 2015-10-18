@@ -35,10 +35,10 @@
     
     // Setup initial plot ranges
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.dataRateGraph.defaultPlotSpace;
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0)
-                                                    length:CPTDecimalFromFloat([self.dataRateRecorder maxDurationInSeconds]/6.0)];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0)
-                                                    length:CPTDecimalFromFloat(1.0)];
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:@0.0
+                                                    length:@([self.dataRateRecorder maxDurationInSeconds]/6.0)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:@(0.0)
+                                                    length:@(1.0)];
     
     // Hide the axes
     CPTXYAxisSet *axisSet = (CPTXYAxisSet*)self.dataRateGraph.axisSet;
@@ -79,8 +79,8 @@
 -(void) onDataRateUpdate:(NSNotification*)notification {
     // Reset the y-axis range and reload the graph data
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.dataRateGraph.defaultPlotSpace;
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-0.01)
-                                                    length:CPTDecimalFromFloat(MAX([self.dataRateRecorder maxValue]*1.1, 1))];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:@(-0.01)
+                                                    length:@(MAX([self.dataRateRecorder maxValue]*1.1, 1))];
     [self.dataRateGraph reloadData];
     [self.dataRateLabel setText:[NSString stringWithFormat:@"%0.1fkB/s", [self.dataRateRecorder latestValue]]];
 }
