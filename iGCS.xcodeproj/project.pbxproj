@@ -59,7 +59,7 @@
 		1845DA791979E5CD008945F8 /* GCSAccessoryFirmwareUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845DA771979E5CD008945F8 /* GCSAccessoryFirmwareUtils.m */; };
 		1845DA85197B8834008945F8 /* GCSActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845DA84197B8834008945F8 /* GCSActivityIndicatorView.m */; };
 		1845DA86197B8834008945F8 /* GCSActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845DA84197B8834008945F8 /* GCSActivityIndicatorView.m */; };
-		18487DCD1BD37DBA0081C9BC /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18487DCA1BD3796E0081C9BC /* libCorePlot-CocoaTouch.a */; };
+		18487DCE1BD380500081C9BC /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18487DC61BD3796E0081C9BC /* CorePlot.framework */; };
 		184E1E241A8D90D300B8EC21 /* plane-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 184E1E221A8D90D300B8EC21 /* plane-icon-128.png */; };
 		184E1E251A8D90D300B8EC21 /* plane-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 184E1E221A8D90D300B8EC21 /* plane-icon-128.png */; };
 		184E1E261A8D90D300B8EC21 /* quad-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 184E1E231A8D90D300B8EC21 /* quad-icon-128.png */; };
@@ -1030,7 +1030,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18487DCD1BD37DBA0081C9BC /* libCorePlot-CocoaTouch.a in Frameworks */,
+				18487DCE1BD380500081C9BC /* CorePlot.framework in Frameworks */,
 				18820E851A64B19A006855E9 /* AVFoundation.framework in Frameworks */,
 				01E9F18D1A04427800901980 /* CoreMotion.framework in Frameworks */,
 				186DC2391992F60700A672A6 /* CoreData.framework in Frameworks */,
