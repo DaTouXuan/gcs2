@@ -12,11 +12,6 @@
 
 #define TESTING 1
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate> {
-	UIAlertView *alertView;
-	NSTimer *updateTimer;
-}
-
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
-+(AppDelegate*)sharedDelegate;
 @end
