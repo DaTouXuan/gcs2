@@ -26,6 +26,10 @@
     return self;
 }
 
+-(instancetype)init {
+    return [self initWithExpectedCount:0];
+}
+
 - (id) mutableCopyWithZone:(NSZone *)zone {
     WaypointsHolder *copy = [[WaypointsHolder allocWithZone: zone] init];
     copy.array = [self.array mutableCopyWithZone: zone];

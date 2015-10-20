@@ -20,6 +20,10 @@
     return self;
 }
 
+-(instancetype) init {
+    return [self initWithAddress:0 andData:nil];
+}
+
 // Create a new AddressDataPair, extending this.data with adp.data
 - (AddressDataPair*) extend:(AddressDataPair*)adp {
     NSMutableData *newData = [NSMutableData dataWithCapacity:self.data.length + adp.data.length];
@@ -48,6 +52,10 @@
         _sortedAddressDataPairs = [[dict allValues] sortedArrayUsingSelector: @selector(compare:)];
     }
     return self;
+}
+
+-(instancetype)init {
+    return [self initWithDict:@{}];
 }
 
 // ref: http://stackoverflow.com/questions/2501033/nsstring-hex-to-bytes

@@ -25,6 +25,11 @@
     }
     return self;
 }
+
+-(instancetype)init {
+    return [self initWithIdentifier:0 andFrequency:0];
+}
+
 @end
 
 

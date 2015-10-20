@@ -26,6 +26,7 @@
 }
 
 - (NSString*) title {
+
     return (_index == 0) ? @"Home" : [NSString stringWithFormat:@"%ld: %@", (long)_index, [WaypointHelper commandIDToString: _waypoint.command]]; // Specially handle the HOME/0 waypoint
 }
 

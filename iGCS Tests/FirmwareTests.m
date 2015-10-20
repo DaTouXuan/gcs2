@@ -101,19 +101,19 @@
     
     // Check file length
     NSUInteger n = [content length];
-    XCTAssertEqual(n, expectedLength, @"Incorrect file size (%u)", n);
+    XCTAssertEqual(n, expectedLength, @"Incorrect file size (%ld)", n);
     
     // Check we got the expected number of AddressDataPairs
     SiKFirmware* fw = [SiKFirmware firmwareFromString:content];
     NSArray *adPairs = fw.sortedAddressDataPairs;
-    XCTAssertEqual(adPairs.count, referenceDict.count, @"Incorrect number of AddressDataPairs (%d)", adPairs.count);
+    XCTAssertEqual(adPairs.count, referenceDict.count, @"Incorrect number of AddressDataPairs (%ld)", adPairs.count);
     
     // Check the existence, length, and first byte of each pair compared to the reference
     for (AddressDataPair *adp in adPairs) {
         NSArray *tuple = [referenceDict objectForKey:[@(adp.address) stringValue]];
-        XCTAssertNotNil(tuple, @"Did not find address %u in reference", adp.address);
-        XCTAssertEqualObjects(@(adp.data.length), [tuple objectAtIndex:0], @"Non-matching lengths at address %u", adp.address);
-        XCTAssertEqualObjects(@(((unsigned char*)adp.data.bytes)[0]), [tuple objectAtIndex:1], @"Non-matching first byte at address %u", adp.address);
+        XCTAssertNotNil(tuple, @"Did not find address %lu in reference",(unsigned long) adp.address);
+        XCTAssertEqualObjects(@(adp.data.length), [tuple objectAtIndex:0], @"Non-matching lengths at address %lu", (unsigned long)adp.address);
+        XCTAssertEqualObjects(@(((unsigned char*)adp.data.bytes)[0]), [tuple objectAtIndex:1], @"Non-matching first byte at address %lu", (unsigned long)adp.address);
     }
 }
 
