@@ -3,7 +3,6 @@
 //  iGCS
 //
 //  Created by Claudio Natoli on 5/02/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "AppDelegate.h" // For TestFlight control

@@ -3,7 +3,6 @@
 //  iGCS
 //
 //  Created by Claudio Natoli on 11/02/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "ArtificialHorizonView.h"
